@@ -1,0 +1,27 @@
+{
+  "root": true,
+  "plugins": [
+    "stylelint-order"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-html/vue",
+    "stylelint-config-recess-order"
+  ],
+  "customSyntax": "postcss-html",
+  "rules": {},
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.tsx",
+    "**/*.ts"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.less"
+      ],
+      "customSyntax": "postcss-less"
+    }
+  ]
+}

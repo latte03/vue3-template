@@ -1,0 +1,21 @@
+{
+  "cSpell.words": [
+    "webfonts"
+  ],
+  "conventionalCommits.scopes": [
+    "other",
+    "git"
+  ],
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less",
+    "vue",
+    "html"
+  ],
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.configFile": ".stylelintrc.json"
+}
