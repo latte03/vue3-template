@@ -23,7 +23,7 @@ h1 {
   top: -10px;
   font-size: 2.6rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--vt-c-white);
 }
 
 h3 {

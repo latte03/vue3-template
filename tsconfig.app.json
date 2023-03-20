@@ -1,14 +1,13 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": [
-    "shims.d.ts",
     "src/**/*",
     "src/**/*.ts",
     "src/**/*.vue",
     "src/**/*.d.ts",
-    "./auto-imports.d.ts",
-    "./typed-router.d.ts",
-    "./components.d.ts"
+    "src/typing/*.d.ts",
+    "types/**/*.d.ts",
+    "vite.config.ts"
   ],
   "exclude": [
     "src/**/__tests__/*"
@@ -17,7 +16,7 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [ "src/*"]
     },
     "module": "ESNext",
     "target": "ESNext",
