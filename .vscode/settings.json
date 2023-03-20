@@ -4,7 +4,8 @@
   ],
   "conventionalCommits.scopes": [
     "other",
-    "git"
+    "git",
+    "init"
   ],
   "stylelint.enable": true,
   "stylelint.validate": [
@@ -17,5 +18,5 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "stylelint.configFile": ".stylelintrc.json"
+  // "stylelint.configFile": ".stylelintrc.json"
 }
