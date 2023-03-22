@@ -1,4 +1,5 @@
 import axios from '@/utils/request'
+
 import type { UserInfo } from './type'
 
 export default {

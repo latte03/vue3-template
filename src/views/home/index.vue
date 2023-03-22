@@ -1,5 +1,5 @@
 <template>
-  <div><TheWelcome></TheWelcome></div>
+  <div><TheWelcome /></div>
 </template>
 <script setup lang="ts">
 definePage({
