@@ -5,7 +5,7 @@
     "src/**/*.ts",
     "src/**/*.vue",
     "src/**/*.d.ts",
-    "src/typing/*.d.ts",
+    "src/types/*.d.ts",
     "types/**/*.d.ts",
     "vite.config.ts"
   ],
