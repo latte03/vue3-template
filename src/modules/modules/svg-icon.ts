@@ -1,9 +1,8 @@
 import type { UserModule } from '@/types'
-import SvgIcon from '@/components/SvgIcon.vue'
-import 'virtual:svg-icons-register'
+import SvgIcon from '~virtual/svg-component'
 /**
  * svg 图标
  */
 export const install: UserModule = ({ app }) => {
-  app.component('SvgIcon', SvgIcon)
+  app.component(SvgIcon.name, SvgIcon)
 }

@@ -1,6 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import type { App } from 'vue'
+import { createRouter, createWebHashHistory } from 'vue-router/auto'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),

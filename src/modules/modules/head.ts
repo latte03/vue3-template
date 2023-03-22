@@ -1,4 +1,5 @@
 import { createHead } from '@vueuse/head'
+
 import type { UserModule } from '@/types'
 
 // vueuse/head https://github.com/vueuse/head

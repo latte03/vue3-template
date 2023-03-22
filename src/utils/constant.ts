@@ -1,3 +1,3 @@
-const TOKEN = 'TONGXIANG_TOKEN'
+const TOKEN = 'TOKEN'
 
 export { TOKEN }
