@@ -10,7 +10,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import UnpluginSvgComponent from 'unplugin-svg-component/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
+import VueMacros from 'unplugin-vue-macros'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import type { ConfigEnv, UserConfigExport } from 'vite'
@@ -41,7 +41,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
 
       // https://github.com/sxzz/unplugin-vue-macros
       // 给 vue 添加魔法 包括 defineOption
-      VueMacros({
+      VueMacros.vite({
         plugins: {
           vue: vue(),
           vueJsx: vueJsx() // if needed
@@ -121,10 +121,10 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       }
     },
     build: {
-      outDir: `dist-${new Date().getTime()}`,
+      outDir: `dist-${process.env.npm_package_version}`,
       /** 消除打包大小超过 500kb 警告 */
       chunkSizeWarningLimit: 2000,
-      /** Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效 */
+      // /** Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效 */
       minify: 'terser',
       /** 在打包代码时移除 console.log、debugger 和 注释 */
       terserOptions: {
