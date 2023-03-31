@@ -3,7 +3,6 @@
 </template>
 <script setup lang="ts">
 definePage({
-  name: 'HomePage',
   meta: {
     layout: 'DefaultLayout'
   }
