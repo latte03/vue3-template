@@ -74,7 +74,6 @@
     "unplugin-vue-macros": "^1.11.2",
     "unplugin-vue-router": "^0.5.4",
     "vite": "^4.2.1",
-    "vite-plugin-pages": "^0.28.0",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-layouts": "^0.8.0",
     "vitest": "^0.25.8",
