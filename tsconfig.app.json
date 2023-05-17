@@ -16,7 +16,9 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [ "src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "module": "ESNext",
     "target": "ESNext",
@@ -26,6 +28,7 @@
     ],
     "strict": true,
     "esModuleInterop": true,
+    "ignoreDeprecations": "5.0",
     "jsx": "preserve",
     "skipLibCheck": true,
     "moduleResolution": "node",
