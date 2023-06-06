@@ -79,8 +79,8 @@ devDependencies:
     specifier: ^2.3.2
     version: 2.3.2(vue@3.3.4)
   '@vue/tsconfig':
-    specifier: ^0.1.3
-    version: 0.1.3(@types/node@18.16.16)
+    specifier: ^0.4.0
+    version: 0.4.0
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0
@@ -2070,15 +2070,8 @@ packages:
       '@vue/server-renderer': 3.3.4(vue@3.3.4)
     dev: true
 
-  /@vue/tsconfig@0.1.3(@types/node@18.16.16):
-    resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
-    peerDependencies:
-      '@types/node': '*'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-    dependencies:
-      '@types/node': 18.16.16
+  /@vue/tsconfig@0.4.0:
+    resolution: {integrity: sha512-CPuIReonid9+zOG/CGTT05FXrPYATEqoDGNrEaqS4hwcw5BUNM2FguC0mOwJD4Jr16UpRVl9N0pY3P+srIbqmg==}
     dev: true
 
   /@vueuse/core@9.13.0(vue@3.3.4):
