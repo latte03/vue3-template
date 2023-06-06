@@ -1,4 +1,5 @@
 import presetRemToPx from '@unocss/preset-rem-to-px'
+import transformerDirectives from '@unocss/transformer-directives'
 import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
 
 export default defineConfig({
@@ -8,6 +9,7 @@ export default defineConfig({
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true })
   ],
+  transformers: [transformerDirectives()],
   shortcuts: [
     ['wh-full', 'w-full h-full'],
     ['flex-center', 'flex justify-center items-center'],
