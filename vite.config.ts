@@ -96,7 +96,8 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
           return nameArr.join('-').replace(/\.svg$/, '')
         },
         // 	svgo 的优化参数 https://github.com/svg/svgo
-        optimizeOptions: undefined
+        optimizeOptions: undefined,
+        scanStrategy: 'text'
       })
     ],
     server: {
