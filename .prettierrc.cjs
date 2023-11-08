@@ -9,5 +9,5 @@ module.exports = {
   htmlWhitespaceSensitivity: 'ignore',
   /* 只有一个参数的箭头函数的参数是否带圆括号（默认avoid） */
   arrowParens: 'avoid',
-  trailingComma: 'none'
+  trailingComma: 'es5'
 }

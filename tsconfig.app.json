@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": [
     "src/**/*",
     "src/**/*.ts",
@@ -7,10 +7,9 @@
     "src/**/*.d.ts",
     "src/types/*.d.ts",
     "types/**/*.d.ts",
+    "tests/**/*.test.ts",
+    "*/**/__tests__/**/*.ts",
     "vite.config.ts"
-  ],
-  "exclude": [
-    "src/**/__tests__/*"
   ],
   "compilerOptions": {
     "composite": true,
@@ -37,7 +36,9 @@
     "strictNullChecks": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "types": []
+    "types": [
+      "vite-plugin-vue-meta-layouts/client"
+    ]
   },
   "vueCompilerOptions": {
     "plugins": [

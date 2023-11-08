@@ -1,7 +1,7 @@
 import type { UserModule } from '@/types'
 
 export const install: UserModule = ({ router }) => {
-  // if (isClient)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   router.beforeEach(to => {
     /**
      * some permission code
@@ -9,5 +9,4 @@ export const install: UserModule = ({ router }) => {
     return true
   })
   router.afterEach(() => {})
-  // }
 }

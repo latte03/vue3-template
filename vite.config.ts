@@ -15,7 +15,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import type { ConfigEnv, UserConfigExport } from 'vite'
 import { loadEnv } from 'vite'
-import Layouts from 'vite-plugin-vue-layouts'
+import MetaLayouts from 'vite-plugin-vue-meta-layouts'
 // import Inspector from 'unplugin-vue-inspector/vite'
 
 const src = fileURLToPath(new URL('./src', import.meta.url))
@@ -30,30 +30,37 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
     /** 打包时根据实际情况修改 base */
     base: VITE_PUBLIC_PATH,
     resolve: {
-      alias: { '@': src }
+      alias: { '@': src },
     },
     plugins: [
       // Pages({ dirs: 'src/views', extensions: ['vue'] }),
       VueRouter({
         routesFolder: 'src/views',
-        dts: './types/typed-router.d.ts'
+        dts: './types/typed-router.d.ts',
       }),
 
       // https://github.com/sxzz/unplugin-vue-macros
       // 给 vue 添加魔法 包括 defineOption
       VueMacros.vite({
         plugins: {
-          vue: vue(),
-          vueJsx: vueJsx() // if needed
-        }
+          vue: vue({
+            script: {
+              defineModel: true,
+            },
+          }),
+          vueJsx: vueJsx(), // if needed
+        },
       }),
 
       // https://github.com/webfansplz/vite-plugin-vue-inspector
       // 如果有需要可以打开
       // Inspector(),
 
-      // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
-      Layouts(),
+      /**
+       * 因为原来的 vite-plugin-vue-layouts 在 layout 组件中修改css 热更新不生效，故而换成这个
+       * @link https://github.com/dishait/vite-plugin-vue-meta-layouts
+       */
+      MetaLayouts(),
 
       // https://github.com/antfu/unocss
       // see unocss.config.ts for config
@@ -66,13 +73,13 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         imports: ['vue', VueRouterAutoImports, 'vue/macros'],
         eslintrc: { enabled: true },
         resolvers: [TDesignResolver({ library: 'vue-next' })],
-        dts: './types/auto-imports.d.ts'
+        dts: './types/auto-imports.d.ts',
       }),
 
       // auto component
       Components({
         resolvers: [TDesignResolver({ library: 'vue-next' })],
-        dts: './types/component.d.ts'
+        dts: './types/component.d.ts',
       }),
 
       // svg icon sprite
@@ -97,8 +104,9 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         },
         // 	svgo 的优化参数 https://github.com/svg/svgo
         optimizeOptions: undefined,
-        scanStrategy: 'text'
-      })
+        scanStrategy: 'text',
+        treeShaking: false,
+      }),
     ],
     server: {
       /** 是否开启 HTTPS */
@@ -108,7 +116,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       /** 跨域设置允许 */
       cors: true,
       fs: {
-        strict: true
+        strict: true,
       },
       proxy: {
         '/dev-env': {
@@ -117,9 +125,9 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
           secure: true,
           rewrite: path => {
             return path.replace(/^\/dev-env/, '')
-          }
-        }
-      }
+          },
+        },
+      },
     },
     build: {
       outDir: `dist-${process.env.npm_package_version}`,
@@ -132,21 +140,21 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         compress: {
           drop_console: false,
           drop_debugger: true,
-          pure_funcs: ['console.log']
+          pure_funcs: ['console.log'],
         },
         format: {
           /** 删除注释 */
-          comments: false
-        }
+          comments: false,
+        },
       },
       /** 打包后静态资源目录 */
       assetsDir: 'static',
-      sourcemap: true
+      sourcemap: true,
     },
     /** Vitest 单元测试配置：https://cn.vitest.dev/config */
     test: {
-      include: ['tests/**/*.test.ts'],
-      environment: 'jsdom'
-    }
+      include: ['tests/**/*.test.ts', '*/**/__tests__/**/*.ts'],
+      environment: 'jsdom',
+    },
   }
 }
