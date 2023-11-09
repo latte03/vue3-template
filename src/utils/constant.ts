@@ -1,3 +1,4 @@
-const TOKEN = 'TOKEN'
+export const TOKEN = 'TOKEN'
 
-export { TOKEN }
+export const isProd = import.meta.env.PROD
+export const isDev = import.meta.env.DEV

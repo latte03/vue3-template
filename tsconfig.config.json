@@ -1,10 +1,12 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.json",
+  "extends": "./tsconfig.app.json",
   "include": [
+    "build/*.ts",
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
-    "playwright.config.*"
+    "playwright.config.*",
+    "types/**/*.d.ts",
   ],
   "compilerOptions": {
     "composite": true,

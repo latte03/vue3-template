@@ -7,9 +7,10 @@
     "src/**/*.d.ts",
     "src/types/*.d.ts",
     "types/**/*.d.ts",
-    "tests/**/*.test.ts",
-    "*/**/__tests__/**/*.ts",
-    "vite.config.ts"
+  ],
+  "exclude": [
+    "src/**/__tests__/*",
+    "tests/**/*.test.ts"
   ],
   "compilerOptions": {
     "composite": true,

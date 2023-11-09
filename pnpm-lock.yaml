@@ -181,9 +181,6 @@ devDependencies:
   vite:
     specifier: ^4.5.0
     version: 4.5.0(@types/node@20.9.0)(less@4.2.0)(terser@5.24.0)
-  vite-plugin-vue-layouts:
-    specifier: ^0.8.0
-    version: 0.8.0(vite@4.5.0)(vue-router@4.2.5)(vue@3.3.8)
   vite-plugin-vue-meta-layouts:
     specifier: ^0.3.1
     version: 0.3.1(vite@4.5.0)(vue-router@4.2.5)
@@ -4103,17 +4100,6 @@ packages:
     resolution: {integrity: sha512-VxPP4NqbUjj6MaAOafWeUn2cXWLcCtljklUtZf0Ind4XQ+QPtmA0b18zZy0jIQx+ExRVCR/ZQpBmik5lXshNsw==}
     dev: true
 
-  /fast-glob@3.2.12:
-    resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
-    engines: {node: '>=8.6.0'}
-    dependencies:
-      '@nodelib/fs.stat': 2.0.5
-      '@nodelib/fs.walk': 1.2.8
-      glob-parent: 5.1.2
-      merge2: 1.4.1
-      micromatch: 4.0.5
-    dev: true
-
   /fast-glob@3.3.1:
     resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
     engines: {node: '>=8.6.0'}
@@ -7685,23 +7671,6 @@ packages:
       kolorist: 1.8.0
       magic-string: 0.30.5
       vite: 4.5.0(@types/node@20.9.0)(less@4.2.0)(terser@5.24.0)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /vite-plugin-vue-layouts@0.8.0(vite@4.5.0)(vue-router@4.2.5)(vue@3.3.8):
-    resolution: {integrity: sha512-UZW2nSV2LraTSe7gsAL46hfdi7a0X1RvkGGoJVtA2O8beu7anzpXFwQLou8+kHy31CzVycT4gIPySBsHhtBN5g==}
-    peerDependencies:
-      vite: ^2.5.0 || ^3.0.0-0 || ^4.0.0
-      vue: ^2.6.12 || ^3.2.4
-      vue-router: ^3.5.1 || ^4.0.11
-    dependencies:
-      '@vue/compiler-sfc': 3.3.4
-      debug: 4.3.4
-      fast-glob: 3.2.12
-      vite: 4.5.0(@types/node@20.9.0)(less@4.2.0)(terser@5.24.0)
-      vue: 3.3.8(typescript@5.2.2)
-      vue-router: 4.2.5(vue@3.3.8)
     transitivePeerDependencies:
       - supports-color
     dev: true

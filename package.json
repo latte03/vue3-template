@@ -1,6 +1,6 @@
 {
   "name": "vue3-template",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -75,7 +75,6 @@
     "unplugin-vue-macros": "^2.6.2",
     "unplugin-vue-router": "^0.7.0",
     "vite": "^4.5.0",
-    "vite-plugin-vue-layouts": "^0.8.0",
     "vite-plugin-vue-meta-layouts": "^0.3.1",
     "vitest": "^0.34.6",
     "volar-plugin-vue-router": "^0.2.0",

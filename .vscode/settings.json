@@ -1,5 +1,9 @@
 {
   "cSpell.words": [
+    "currentcolor",
+    "nocheck",
+    "rushstack",
+    "tdesign",
     "webfonts"
   ],
   "conventionalCommits.scopes": [
@@ -15,4 +19,5 @@
     "vue",
     "html"
   ],
+  "typescript.tsdk": "node_modules/typescript/lib",
 }
