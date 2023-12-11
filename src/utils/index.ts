@@ -4,3 +4,15 @@ export function isWebURL(url: string) {
   )
   return regex.test(url)
 }
+
+export function judge(
+  value: number,
+  interval: Array<[number, number]>
+): [number, number] | undefined {
+  return interval.find(item => {
+    if (value > item[0] && value <= item[1]) {
+      return true
+    }
+    return false
+  })
+}
