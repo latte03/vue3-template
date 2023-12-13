@@ -62,7 +62,7 @@ export function definePlugins() {
        * targets to transform
        * .ts, .tsx, .js, .jsx
        */
-      include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
+      include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
       imports: ['vue', VueRouterAutoImports, 'vue/macros'],
       eslintrc: { enabled: true },
       resolvers: [TDesignResolver({ library: 'vue-next' })],

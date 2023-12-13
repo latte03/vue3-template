@@ -11,10 +11,10 @@ module.exports = {
     { value: 'chore', name: '🧰 chore: 改变构建流程、或者增加依赖库、工具等' },
     {
       value: 'improvement',
-      name: '🧩 improvement: 用于对当前实现进行改进而没有添加新功能或修复错误的提交'
+      name: '🧩 improvement: 用于对当前实现进行改进而没有添加新功能或修复错误的提交',
     },
     { value: 'merge', name: '💎 merge: 仅进行分支合并' },
-    { value: 'revert', name: '↩ revert: 回滚到上一个版本' }
+    { value: 'revert', name: '↩ revert: 回滚到上一个版本' },
   ],
 
   messages: {
@@ -26,10 +26,10 @@ module.exports = {
     body: '长描述，使用"|"换行(可选):\n',
     breaking: '非兼容性说明 (可选):\n',
     footer: '关联关闭的issue:例如:#1, #2(可选):\n',
-    confirmCommit: '确定提交?'
+    confirmCommit: '确定提交?',
   },
 
   allowBreakingChanges: ['feat', 'fix'],
   skipQuestions: ['customScope', 'body', 'breaking', 'footer'],
-  subjectLimit: 100
+  subjectLimit: 100,
 }

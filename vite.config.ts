@@ -1,7 +1,6 @@
 /// <reference types="vitest" />
 
-import type { ConfigEnv, UserConfigExport } from 'vite'
-import { loadEnv } from 'vite'
+import { type ConfigEnv, loadEnv, type UserConfigExport } from 'vite'
 
 import { definePlugins, src } from './build/plugins'
 
@@ -20,8 +19,6 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
     },
     plugins: definePlugins(),
     server: {
-      /** 是否开启 HTTPS */
-      https: false,
       /** 设置 host: true 才可以使用 Network 的形式，以 IP 访问项目 */
       host: true,
       /** 跨域设置允许 */
@@ -41,7 +38,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       },
     },
     build: {
-      outDir: `dist-${process.env.npm_package_version}-${new Date().getTime()}`,
+      outDir: `dist-${process.env.npm_package_version}-${Date.now()}`,
       /** 消除打包大小超过 500kb 警告 */
       chunkSizeWarningLimit: 2000,
       /** Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效 */

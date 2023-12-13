@@ -3,6 +3,7 @@
     "currentcolor",
     "nocheck",
     "rushstack",
+    "sxzz",
     "tdesign",
     "webfonts"
   ],
@@ -20,4 +21,5 @@
     "html"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.experimental.useFlatConfig": true
 }

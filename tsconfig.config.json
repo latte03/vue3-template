@@ -1,17 +1,15 @@
 {
   "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"]
+  },
   "include": [
     "build/*.ts",
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
     "playwright.config.*",
-    "types/**/*.d.ts",
-  ],
-  "compilerOptions": {
-    "composite": true,
-    "types": [
-      "node"
-    ]
-  }
+    "types/**/*.d.ts"
+  ]
 }

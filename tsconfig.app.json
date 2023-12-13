@@ -1,46 +1,36 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "composite": true,
+    "target": "ESNext",
+    "jsx": "preserve",
+    "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "resolveJsonModule": true,
+    "types": ["vite-plugin-vue-meta-layouts/client"],
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "ignoreDeprecations": "5.0",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
   "include": [
     "src/**/*",
     "src/**/*.ts",
     "src/**/*.vue",
     "src/**/*.d.ts",
     "src/types/*.d.ts",
-    "types/**/*.d.ts",
+    "types/**/*.d.ts"
   ],
-  "exclude": [
-    "src/**/__tests__/*",
-    "tests/**/*.test.ts"
-  ],
-  "compilerOptions": {
-    "composite": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
-    "strict": true,
-    "esModuleInterop": true,
-    "ignoreDeprecations": "5.0",
-    "jsx": "preserve",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "vite-plugin-vue-meta-layouts/client"
-    ]
-  },
+  "exclude": ["src/**/__tests__/*", "tests/**/*.test.ts"],
   "vueCompilerOptions": {
     "plugins": [
       "@vue-macros/volar/define-model",

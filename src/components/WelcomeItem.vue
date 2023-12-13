@@ -1,5 +1,5 @@
 <template>
-  <div class="flex item relative">
+  <div class="item relative flex">
     <i class="flex">
       <slot name="icon" />
     </i>

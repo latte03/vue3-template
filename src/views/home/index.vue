@@ -13,6 +13,6 @@ definePage({
 </script>
 
 <template>
-  <img class="w-xs m-auto" :src="Logo" alt="" />
+  <img class="m-auto w-xs" :src="Logo" alt="" />
   <div><TheWelcome /></div>
 </template>

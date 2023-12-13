@@ -1,21 +1,24 @@
+/**
+ * alova 是一个轻量级的请求策略库，支持开发者使用声明式实现例如请求共享、分页请求、表单提交、断点续传等各种较复杂的请求
+ * @link https://alova.js.org/zh-CN/category/get-started
+ */
 import { createAlova } from 'alova'
 import GlobalFetch from 'alova/GlobalFetch'
 import VueHook from 'alova/vue'
 
 import { baseURL } from './constant'
 
-const enum RESPONSE_CODE {
+enum RESPONSE_CODE {
   SUCCESS = 200,
   ERROR = 500,
   UNAUTHORIZED = 401,
   FORBIDDEN = 403,
   NOT_FOUND = 404,
   BAD_REQUEST = 400,
-  INTERNAL_SERVER_ERROR = 500,
 }
 
 const alovaInstance = createAlova({
-  baseURL: baseURL,
+  baseURL,
   statesHook: VueHook,
   // 请求超时时间，单位为毫秒，默认为0，表示永不超时
   timeout: 50000,
@@ -33,6 +36,7 @@ const alovaInstance = createAlova({
     // 请求成功的拦截器
     // 当使用GlobalFetch请求适配器时，第一个参数接收Response对象
     // 第二个参数为当前请求的method实例，你可以用它同步请求前后的配置信息
+    // eslint-disable-next-line unused-imports/no-unused-vars
     onSuccess: async (response, method) => {
       if (response.status >= RESPONSE_CODE.BAD_REQUEST) {
         throw new Error(response.statusText)
@@ -58,7 +62,7 @@ const alovaInstance = createAlova({
     // 请求完成的拦截器
     // 当你需要在请求不论是成功、失败、还是命中缓存都需要执行的逻辑时，可以在创建`alova`实例时指定全局的`onComplete`拦截器，例如关闭请求 loading 状态。
     // 接收当前请求的method实例
-    onComplete: async method => {
+    onComplete: method => {
       console.log('🍻 method', 'color:#465975', method)
       // 处理请求完成逻辑
     },

@@ -1,7 +1,8 @@
 {
   "name": "vue3-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "concurrently \"pnpm:type-check\" \"pnpm:build-only\"",
@@ -10,7 +11,8 @@
     "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "eslint-viewer": "eslint-flat-config-viewer",
+    "lint": "eslint . --fix",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "cz": "git add . && cz"
   },
@@ -32,7 +34,7 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.6.0",
+    "@sxzz/eslint-config": "^3.7.5",
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.10.3",
     "@types/nprogress": "^0.2.3",
@@ -41,8 +43,6 @@
     "@vitejs/plugin-vue": "^4.5.1",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue-macros/volar": "^0.17.4",
-    "@vue/eslint-config-prettier": "^8.0.0",
-    "@vue/eslint-config-typescript": "^12.0.0",
     "@vue/runtime-core": "^3.3.10",
     "@vue/test-utils": "^2.4.3",
     "@vue/tsconfig": "^0.4.0",
@@ -52,8 +52,8 @@
     "cz-customizable": "^7.0.0",
     "eslint": "^8.55.0",
     "eslint-define-config": "^2.0.0",
+    "eslint-flat-config-viewer": "^0.1.3",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-vue": "^9.19.2",
     "jsdom": "^23.0.1",
     "less": "^4.2.0",
     "pnpm-patch-i": "^0.2.1",

@@ -9,11 +9,11 @@ const modules = import.meta.glob('./modules/*.ts', {
 })
 
 export function setupModules(app: App<Element>) {
-  for (const path in modules) {
+  Object.keys(modules).forEach(path => {
     ;(modules[path] as { install: UserModule }).install?.({
       app,
       router,
-      routes: routes,
+      routes,
     })
-  }
+  })
 }

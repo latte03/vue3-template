@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { baseURL } from './constant'
 
 const axios = Axios.create({
-  baseURL: baseURL,
+  baseURL,
   headers: {},
 })
 
@@ -23,4 +23,4 @@ axios.interceptors.response.use(
   }
 )
 
-export default axios
+export { axios }

@@ -25,7 +25,6 @@ module.exports = {
       },
     ],
     'property-no-vendor-prefix': null,
-    'scale-unlimited/declaration-strict-value': null,
     'function-no-unknown': [
       true,
       {

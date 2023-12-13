@@ -1,6 +1,6 @@
 import '@unocss/reset/tailwind.css'
-import 'uno.css'
 import './style/index.less'
+import 'uno.css'
 
 import { createApp } from 'vue'
 
@@ -14,5 +14,4 @@ const app = createApp(App)
 setupStore(app)
 setupRouter(app)
 setupModules(app)
-
 app.mount('#app')
