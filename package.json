@@ -76,7 +76,7 @@
     "unplugin-vue-inspector": "^1.0.2",
     "unplugin-vue-macros": "^2.7.0",
     "unplugin-vue-router": "^0.7.0",
-    "vite": "^5.0.6",
+    "vite": "^5.0.12",
     "vite-plugin-vue-meta-layouts": "^0.3.3",
     "vitest": "^1.0.1",
     "volar-plugin-vue-router": "^0.2.0",
