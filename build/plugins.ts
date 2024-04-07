@@ -15,13 +15,18 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
 
-export const src = fileURLToPath(new URL('/src', import.meta.url))
+export const src = fileURLToPath(new URL('../src', import.meta.url))
+export const types = fileURLToPath(new URL('../types', import.meta.url))
+
 const getFilePath = (_path: string) => path.join(src, _path)
+const getTypesPath = (_path: string) => path.join(types, _path)
+
 export function definePlugins() {
   return [
     VueRouter({
       routesFolder: 'src/views',
-      dts: '../types/typed-router.d.ts',
+      // dts: '../types/typed-router.d.ts',
+      dts: getTypesPath('./typed-router.d.ts'),
     }),
 
     /**
@@ -30,11 +35,7 @@ export function definePlugins() {
      */
     VueMacros.vite({
       plugins: {
-        vue: vue({
-          script: {
-            defineModel: true,
-          },
-        }),
+        vue: vue(),
         vueJsx: vueJsx(),
       },
     }),
@@ -49,7 +50,10 @@ export function definePlugins() {
      * 因为原来的 vite-plugin-vue-layouts 在 layout 组件中修改css 热更新不生效，故而换成这个
      * @link https://github.com/dishait/vite-plugin-vue-meta-layouts
      */
-    MetaLayouts(),
+    MetaLayouts({
+      // 打开修复 https://github.com/JohnCampionJr/vite-plugin-vue-layouts/issues/134，默认为 false 关闭
+      skipTopLevelRouteLayout: true,
+    }),
 
     /**
      * see unocss.config.ts for config
@@ -66,7 +70,7 @@ export function definePlugins() {
       imports: ['vue', VueRouterAutoImports, 'vue/macros'],
       eslintrc: { enabled: true },
       resolvers: [TDesignResolver({ library: 'vue-next' })],
-      dts: '../types/auto-imports.d.ts',
+      dts: getTypesPath('./auto-imports.d.ts'),
     }),
 
     /**
@@ -74,8 +78,9 @@ export function definePlugins() {
      * @link   https://github.com/antfu/unplugin-vue-components
      */
     Components({
+      dirs: getFilePath('./components'),
       resolvers: [TDesignResolver({ library: 'vue-next' })],
-      dts: '../types/component.d.ts',
+      dts: getTypesPath('./component.d.ts'),
     }),
 
     /**
@@ -91,7 +96,7 @@ export function definePlugins() {
        * 此属性会对每个svg路径进行正则匹配, 匹配成功的svg则不会替换currentColor, 而是保留原有的颜色.
        * preserveColor: getFilePath('icons/common'),
        */
-      dtsDir: '../types',
+      dtsDir: types,
       svgSpriteDomId: 'svg-id',
 
       /**

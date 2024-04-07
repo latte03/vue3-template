@@ -3,13 +3,16 @@ import Logo from '@/assets/logo.svg'
 defineOptions({
   name: 'HomePage',
 })
-console.log('%c Line:3 🥔 Logo', 'color:#f5ce50', Logo)
 definePage({
   name: 'HomePage',
   meta: {
-    layout: 'DefaultLayout',
+    layout: 'other-layout',
   },
 })
+
+const route = useRoute('HomePage')
+
+console.log('%c Line:16 🥐', 'color:#f5ce50', route.meta)
 </script>
 
 <template>

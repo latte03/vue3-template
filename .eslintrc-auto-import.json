@@ -75,6 +75,7 @@
     "ExtractPropTypes": true,
     "ExtractPublicPropTypes": true,
     "WritableComputedRef": true,
-    "toValue": true
+    "toValue": true,
+    "useLink": true
   }
 }

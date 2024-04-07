@@ -1,6 +1,6 @@
 import type { HeadObject } from '@vueuse/head'
 import type { App } from 'vue'
-import type { Router, RouteRecordRaw } from 'vue-router'
+import type { Router, RouteRecordRaw } from 'vue-router/auto'
 
 interface AppContext<HasRouter extends boolean = true> {
   app: App<Element>

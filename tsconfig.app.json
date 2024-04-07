@@ -4,15 +4,20 @@
     "composite": true,
     "target": "ESNext",
     "jsx": "preserve",
-    "lib": ["DOM", "ESNext"],
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "baseUrl": ".",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "resolveJsonModule": true,
-    "types": ["vite-plugin-vue-meta-layouts/client"],
+    "types": [],
     "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
@@ -30,16 +35,12 @@
     "src/types/*.d.ts",
     "types/**/*.d.ts"
   ],
-  "exclude": ["src/**/__tests__/*", "tests/**/*.test.ts"],
+  "exclude": [
+    "src/**/__tests__/*",
+    "tests/**/*.test.ts"
+  ],
   "vueCompilerOptions": {
-    "plugins": [
-      "@vue-macros/volar/define-model",
-      "@vue-macros/volar/define-props",
-      "@vue-macros/volar/define-props-refs",
-      "@vue-macros/volar/short-vmodel",
-      "@vue-macros/volar/define-slots",
-      "@vue-macros/volar/export-props"
-    ]
+    "plugins": []
     // ...
   }
 }
