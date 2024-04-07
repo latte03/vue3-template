@@ -2,5 +2,9 @@
 declare interface ImportMetaEnv {
   readonly VITE_BASE_API: string
   readonly VITE_ROUTER_HISTORY: 'hash' | 'html5'
+  readonly VITE_API_URL: string
+  readonly VITE_HOST_URL: string
   readonly VITE_PUBLIC_PATH: string
+  readonly VITE_DROP_CONSOLE: 'true' | 'false'
+  readonly VITE_LEGAL_COMMENTS: 'true' | 'false'
 }

@@ -3,13 +3,17 @@
 import { type ConfigEnv, loadEnv, type UserConfigExport } from 'vite'
 
 import { definePlugins, src } from './build/plugins'
+import { version } from './package.json'
+import { parseEnv } from './build/parseEnv'
 
 /**
  * @link https://vitejs.dev/config/
  */
 export default (configEnv: ConfigEnv): UserConfigExport => {
-  const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv
-  const { VITE_PUBLIC_PATH } = viteEnv
+  const viteEnv = parseEnv(loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv)
+  console.log('%c Line:14 🍷 viteEnv', 'color:#3f7cff', viteEnv)
+
+  const { VITE_PUBLIC_PATH, VITE_API_URL, VITE_HOST_URL } = viteEnv
 
   return {
     /** 打包时根据实际情况修改 base */
@@ -18,17 +22,17 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       alias: { '@': src },
     },
     plugins: definePlugins(),
+    define: {
+      __AG__VERSION__: JSON.stringify(version),
+    },
     server: {
       /** 设置 host: true 才可以使用 Network 的形式，以 IP 访问项目 */
       host: true,
       /** 跨域设置允许 */
       cors: true,
-      fs: {
-        strict: true,
-      },
       proxy: {
         '/dev-env': {
-          target: 'https://www.txwlsq.com',
+          target: VITE_HOST_URL + VITE_API_URL,
           changeOrigin: true,
           secure: true,
           rewrite: path => {
@@ -37,24 +41,18 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
         },
       },
     },
+
+    esbuild: {
+      /** 在打包代码时移除 console.log、debugger 和 注释 */
+      drop: viteEnv.VITE_DROP_CONSOLE ? ['console', 'debugger'] : [],
+      legalComments: viteEnv.VITE_LEGAL_COMMENTS ? 'none' : 'inline',
+    },
     build: {
       outDir: `dist-${process.env.npm_package_version}-${Date.now()}`,
       /** 消除打包大小超过 500kb 警告 */
       chunkSizeWarningLimit: 2000,
-      /** Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效 */
-      minify: 'terser',
-      /** 在打包代码时移除 console.log、debugger 和 注释 */
-      terserOptions: {
-        compress: {
-          drop_console: false,
-          drop_debugger: true,
-          pure_funcs: ['console.log'],
-        },
-        format: {
-          /** 删除注释 */
-          comments: false,
-        },
-      },
+      minify: 'esbuild',
+
       /** 打包后静态资源目录 */
       assetsDir: 'static',
       sourcemap: true,
