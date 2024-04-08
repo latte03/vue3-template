@@ -14,6 +14,10 @@ import VueMacros from 'unplugin-vue-macros'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
+import Compression from 'unplugin-compression/vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import Info from 'unplugin-info/vite'
+import { webUpdateNotice } from '@plugin-web-update-notification/vite'
 
 export const src = fileURLToPath(new URL('../src', import.meta.url))
 export const types = fileURLToPath(new URL('../types', import.meta.url))
@@ -122,6 +126,37 @@ export function definePlugins() {
       optimizeOptions: undefined,
       scanStrategy: 'text',
       treeShaking: false,
+    }),
+    /**
+     * Compress dist to zip, tar, taz
+     * @link https://github.com/KeJunMao/unplugin-compression
+     */
+    Compression({
+      adapter: 'zip',
+      source: path.join('./', `dist-${process.env.npm_package_version}`),
+      outDir: path.join('./'),
+    }),
+
+    /**
+     * Give vite the ability to resolve imports using TypeScript's path mapping.
+     * @link https://github.com/aleclarson/vite-tsconfig-paths
+     */
+    tsconfigPaths(),
+
+    /**
+     * Export build information as virutal module.
+     * This plugin helps you add build timestamp / commit SHA / CI environment / package.json / ... to your application. So you can easily check whether the production version meets your expectations, or config your application.
+     * @link https://github.com/yjl9903/unplugin-info
+     */
+    Info(),
+
+    /**
+     * Detect webpage updates and notify user to reload. support vite, umijs and webpack.
+     * @link https://github.com/GreatAuk/plugin-web-update-notification
+     */
+    webUpdateNotice({
+      locale: 'zh_CN',
+      logVersion: true,
     }),
   ]
 }

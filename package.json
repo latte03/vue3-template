@@ -21,7 +21,7 @@
     "@vue-macros/reactivity-transform": "^0.4.4",
     "@vueuse/core": "^10.9.0",
     "@vueuse/head": "^2.0.0",
-    "alova": "^2.18.2",
+    "alova": "^2.18.3",
     "axios": "^1.6.8",
     "fast-querystring": "^1.1.2",
     "lodash-es": "^4.17.21",
@@ -34,6 +34,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@plugin-web-update-notification/vite": "^1.7.1",
     "@sxzz/eslint-config": "^3.8.7",
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.12.5",
@@ -42,7 +43,7 @@
     "@unocss/transformer-directives": "^0.59.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
-    "@vue-macros/volar": "^0.18.17",
+    "@vue-macros/volar": "^0.18.18",
     "@vue/runtime-core": "^3.4.21",
     "@vue/test-utils": "^2.4.5",
     "@vue/tsconfig": "^0.5.1",
@@ -71,6 +72,8 @@
     "terser": "^5.30.3",
     "typescript": "~5.4.4",
     "unplugin-auto-import": "^0.17.5",
+    "unplugin-compression": "^0.0.6",
+    "unplugin-info": "^1.1.0",
     "unplugin-svg-component": "^0.8.0",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-inspector": "^1.0.2",
@@ -78,9 +81,10 @@
     "unplugin-vue-router": "^0.8.5",
     "vite": "^5.2.8",
     "vite-plugin-vue-meta-layouts": "^0.4.2",
+    "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.4.0",
     "volar-plugin-vue-router": "^0.2.0",
-    "vue-tsc": "^2.0.10"
+    "vue-tsc": "^2.0.11"
   },
   "engines": {
     "node": ">=16.0.0"

@@ -48,7 +48,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       legalComments: viteEnv.VITE_LEGAL_COMMENTS ? 'none' : 'inline',
     },
     build: {
-      outDir: `dist-${process.env.npm_package_version}-${Date.now()}`,
+      outDir: `dist-${process.env.npm_package_version}`,
       /** 消除打包大小超过 500kb 警告 */
       chunkSizeWarningLimit: 2000,
       minify: 'esbuild',

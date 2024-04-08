@@ -10,6 +10,8 @@ const router = createRouter({
 export function setupRouter(app: App<Element>) {
   app.use(router)
 }
+
+//@ts-expect-error
 export const getRoutes = createGetRoutes(router)
 
 export default router
