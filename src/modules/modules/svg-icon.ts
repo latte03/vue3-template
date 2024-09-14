@@ -1,5 +1,5 @@
-import type { UserModule } from '@/types'
 import SvgIcon from '~virtual/svg-component'
+import type { UserModule } from '@/types'
 /**
  * svg 图标
  */

@@ -1,12 +1,9 @@
 import { sxzz } from '@sxzz/eslint-config'
-import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
 export default sxzz(
   [
     {
-      plugins: {
-        'simple-import-sort': simpleImportSort,
-      },
+      plugins: {},
       rules: {
         'no-restricted-syntax': [
           'error',
@@ -19,8 +16,6 @@ export default sxzz(
         '@typescript-eslint/no-empty-function': 'off',
         // Prettier
         'prettier/prettier': 'error',
-        'simple-import-sort/imports': 'error',
-        'simple-import-sort/exports': 'error',
         'import/order': 'off',
         'sort-imports': 'off',
         'vue/attributes-order': 'error',

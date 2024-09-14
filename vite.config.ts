@@ -1,11 +1,10 @@
-/// <reference types="vitest" />
+import process from 'node:process'
 
-import { type ConfigEnv, loadEnv, type UserConfigExport } from 'vite'
+import { loadEnv, type ConfigEnv, type UserConfigExport } from 'vite'
 
+import { parseEnv } from './build/parseEnv'
 import { definePlugins, src } from './build/plugins'
 import { version } from './package.json'
-import { parseEnv } from './build/parseEnv'
-
 /**
  * @link https://vitejs.dev/config/
  */

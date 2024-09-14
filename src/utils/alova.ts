@@ -3,7 +3,8 @@
  * @link https://alova.js.org/zh-CN/category/get-started
  */
 import { createAlova } from 'alova'
-import GlobalFetch from 'alova/GlobalFetch'
+import fetchAdapter, { type FetchRequestAdapter } from 'alova/fetch'
+
 import VueHook from 'alova/vue'
 
 import { baseURL } from './constant'
@@ -22,7 +23,7 @@ const alovaInstance = createAlova({
   statesHook: VueHook,
   // 请求超时时间，单位为毫秒，默认为0，表示永不超时
   timeout: 50000,
-  requestAdapter: GlobalFetch(),
+  requestAdapter: (fetchAdapter as () => FetchRequestAdapter)(),
   // 函数参数为一个method实例，包含如url、params、data、headers等请求数据
   // 你可以自由修改这些数据
   beforeRequest: method => {

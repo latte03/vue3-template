@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { useAssetsImageURL } from '@composables/url-composable'
 
-import { getRoutes } from '@/router'
 import { sha } from '~build/git'
+import { getRoutes } from '@/router'
 
 definePage({
   name: 'IndexPage',
@@ -18,6 +18,6 @@ const logo = useAssetsImageURL('logo', { extension: '.svg' })
 <template>
   <div>
     sha: {{ sha }}
-    <img :src="logo" alt="" class="w-10 h-10" />
+    <img :src="logo" alt="" class="h-10 w-10" />
   </div>
 </template>

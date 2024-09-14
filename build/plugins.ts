@@ -1,12 +1,16 @@
 /// <reference types="vitest" />
 
 import path from 'node:path'
-import { fileURLToPath, URL } from 'node:url'
+import process from 'node:process'
 
+import { fileURLToPath, URL } from 'node:url'
+import { webUpdateNotice } from '@plugin-web-update-notification/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Compression from 'unplugin-compression/vite'
+import Info from 'unplugin-info/vite'
 import UnpluginSvgComponent from 'unplugin-svg-component/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
@@ -14,10 +18,7 @@ import VueMacros from 'unplugin-vue-macros'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
-import Compression from 'unplugin-compression/vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
-import Info from 'unplugin-info/vite'
-import { webUpdateNotice } from '@plugin-web-update-notification/vite'
 
 export const src = fileURLToPath(new URL('../src', import.meta.url))
 export const types = fileURLToPath(new URL('../types', import.meta.url))

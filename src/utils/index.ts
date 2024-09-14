@@ -1,4 +1,5 @@
 export function isWebURL(url: string) {
+  // eslint-disable-next-line regexp/no-unused-capturing-group
   const regex = /^(((ht|f)tps?):\/{2})?([^\s!#$%&*.?@^-]([^\s!#$%&*.?@^]{1,64})?\.)+[a-z]{2,6}\/?/
   return regex.test(url)
 }

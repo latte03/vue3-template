@@ -4,20 +4,13 @@
     "composite": true,
     "target": "ESNext",
     "jsx": "preserve",
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@composables/*": [
-        "src/composables/*"
-      ]
+      "@/*": ["src/*"],
+      "@composables/*": ["src/composables/*"]
     },
     "resolveJsonModule": true,
     "types": [],
@@ -28,6 +21,7 @@
     "esModuleInterop": true,
     "ignoreDeprecations": "5.0",
     "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
   "include": [
@@ -38,10 +32,7 @@
     "src/types/*.d.ts",
     "types/**/*.d.ts"
   ],
-  "exclude": [
-    "src/**/__tests__/*",
-    "tests/**/*.test.ts"
-  ],
+  "exclude": ["src/**/__tests__/*", "tests/**/*.test.ts"],
   "vueCompilerOptions": {
     "plugins": []
     // ...
