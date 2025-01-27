@@ -56,13 +56,5 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       assetsDir: 'static',
       sourcemap: true,
     },
-    /**
-     *  Vitest 单元测试配置
-     * @link https://cn.vitest.dev/config
-     */
-    test: {
-      include: ['tests/**/*.test.ts', '*/**/__tests__/**/*.ts'],
-      environment: 'jsdom',
-    },
   }
 }
