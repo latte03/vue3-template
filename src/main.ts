@@ -8,6 +8,7 @@ import { setupStore } from './store'
 import '@unocss/reset/tailwind.css'
 import './style/index.less'
 import 'uno.css'
+import '~console/theme-detect'
 
 const app = createApp(App)
 

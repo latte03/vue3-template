@@ -12,11 +12,14 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Compression from 'unplugin-compression/vite'
 import Info from 'unplugin-info/vite'
 import UnpluginSvgComponent from 'unplugin-svg-component/vite'
+import TurboConsole from 'unplugin-turbo-console/vite'
+import UnpluginUnused from 'unplugin-unused/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import VueMacros from 'unplugin-vue-macros'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
+import VueDevtools from 'vite-plugin-vue-devtools'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
@@ -61,6 +64,21 @@ export function definePlugins() {
     }),
 
     /**
+     * Vue DevTools Next
+     * @link https://github.com/vuejs/devtools-next#readme
+     */
+    VueDevtools(),
+
+    /**
+     * Unplugin Torbo Console 是一个通用型插件，旨在增强前端开发人员在使用 console 时的开发者体验(DX)
+     * @link https://utc.yuy1n.io/guide/getting-started.html
+     */
+
+    TurboConsole({
+      /* options here */
+    }),
+
+    /**
      * see unocss.config.ts for config
      * @link https://github.com/antfu/unocss
      */
@@ -85,7 +103,7 @@ export function definePlugins() {
     Components({
       dirs: getFilePath('./components'),
       resolvers: [TDesignResolver({ library: 'vue-next' })],
-      dts: getTypesPath('./component.d.ts'),
+      dts: getTypesPath('./components.d.ts'),
     }),
 
     /**
@@ -159,5 +177,11 @@ export function definePlugins() {
       locale: 'zh_CN',
       logVersion: true,
     }),
+
+    /**
+     * Check unused dependencies.
+     * @link https://github.com/unplugin/unplugin-unused
+     */
+    UnpluginUnused(),
   ]
 }

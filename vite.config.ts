@@ -10,7 +10,7 @@ import { version } from './package.json'
  */
 export default (configEnv: ConfigEnv): UserConfigExport => {
   const viteEnv = parseEnv(loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv)
-  console.log('%c Line:14 🍷 viteEnv', 'color:#3f7cff', viteEnv)
+  console.log(viteEnv)
 
   const { VITE_PUBLIC_PATH, VITE_API_URL, VITE_HOST_URL } = viteEnv
 
