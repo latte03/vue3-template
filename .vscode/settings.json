@@ -1,28 +1,9 @@
 {
-  "cSpell.words": [
-    "currentcolor",
-    "nocheck",
-    "rushstack",
-    "sxzz",
-    "tdesign",
-    "webfonts"
-  ],
-  "conventionalCommits.scopes": [
-    "other",
-    "git",
-    "init"
-  ],
+  "cSpell.words": ["currentcolor", "nocheck", "rushstack", "sxzz", "tdesign", "webfonts"],
+  "conventionalCommits.scopes": ["other", "git", "init"],
   "stylelint.enable": true,
-  "stylelint.validate": [
-    "css",
-    "scss",
-    "less",
-    "vue",
-    "html"
-  ],
+  "stylelint.validate": ["css", "scss", "less", "vue", "html"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.preferences.autoImportFileExcludePatterns": [
-    "vue-router$"
-  ],
-  "eslint.experimental.useFlatConfig": true
+  "typescript.preferences.autoImportFileExcludePatterns": ["vue-router$"],
+  "eslint.useFlatConfig": true
 }
