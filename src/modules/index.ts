@@ -1,8 +1,8 @@
-import type { App } from 'vue'
 import { routes } from 'vue-router/auto-routes'
-
 import router from '@/router'
+
 import type { UserModule } from '@/types'
+import type { App } from 'vue'
 
 const modules = import.meta.glob('./modules/*.ts', {
   eager: true,

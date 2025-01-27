@@ -1,0 +1,36 @@
+diff --git a/dist/index.css b/dist/index.css
+index 4dda46514076b726f271cdf153b812758b54fadb..9d3e1d84a14a3a047574e10c67a78b4bafab442d 100644
+--- a/dist/index.css
++++ b/dist/index.css
+@@ -1,9 +1,10 @@
+ #nprogress {
+   pointer-events: none;
++  --color:var(--nprogress-color,#29d);
+ }
+ 
+ #nprogress .bar {
+-  background: #29d;
++  background: var(--color);
+ 
+   position: fixed;
+   z-index: 1031;
+@@ -21,7 +22,7 @@
+   right: 0px;
+   width: 100px;
+   height: 100%;
+-  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
++  box-shadow: 0 0 10px var(--color), 0 0 5px var(--color);
+   opacity: 1.0;
+ 
+   transform: rotate(3deg) translate(0px, -4px);
+@@ -42,8 +43,8 @@
+   box-sizing: border-box;
+ 
+   border: solid 2px transparent;
+-  border-top-color: #29d;
+-  border-left-color: #29d;
++  border-top-color: var(--color);
++  border-left-color: var(--color);
+   border-radius: 50%;
+ 
+   animation: nprogress-spinner 400ms linear infinite;

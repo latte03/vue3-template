@@ -1,4 +1,4 @@
-import NProgress from 'nprogress'
+import { NProgress } from 'nprogress-v2'
 
 import type { UserModule } from '@/types'
 

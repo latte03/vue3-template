@@ -28,7 +28,7 @@
     "bumpp": "^10.0.1",
     "fast-querystring": "^1.1.2",
     "lodash-es": "^4.17.21",
-    "nprogress": "^0.2.0",
+    "nprogress-v2": "^1.0.4",
     "pinia": "^2.3.1",
     "tdesign-icons-vue-next": "^0.3.4",
     "tdesign-vue-next": "^1.10.7",
@@ -41,7 +41,6 @@
     "@sxzz/eslint-config": "^4.6.0",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.10.10",
-    "@types/nprogress": "^0.2.3",
     "@unocss/preset-rem-to-px": "^65.4.3",
     "@unocss/transformer-directives": "^65.4.3",
     "@vitejs/plugin-vue": "^5.2.1",
@@ -83,7 +82,7 @@
     "unplugin-vue-inspector": "^2.3.1",
     "unplugin-vue-macros": "^2.13.10",
     "unplugin-vue-router": "^0.11.2",
-    "vite": "^5.4.14",
+    "vite": "^6.0.11",
     "vite-plugin-vue-devtools": "^7.7.1",
     "vite-plugin-vue-meta-layouts": "^0.5.1",
     "vite-tsconfig-paths": "^5.1.4",
@@ -100,6 +99,11 @@
     },
     "commitizen": {
       "path": "cz-customizable"
+    }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "nprogress-v2": "patches/nprogress-v2.patch"
     }
   }
 }
