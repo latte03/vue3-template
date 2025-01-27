@@ -2,7 +2,7 @@ import process from 'node:process'
 
 import { loadEnv, type ConfigEnv, type UserConfigExport } from 'vite'
 
-import { parseEnv } from './build/parseEnv'
+import { parseEnv } from './build/parse-env'
 import { definePlugins, src } from './build/plugins'
 import { version } from './package.json'
 /**
@@ -12,7 +12,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
   const viteEnv = parseEnv(loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv)
   console.log(viteEnv)
 
-  const { VITE_PUBLIC_PATH, VITE_API_URL, VITE_HOST_URL } = viteEnv
+  const { VITE_PUBLIC_PATH, VITE_API_URL } = viteEnv
 
   return {
     /** 打包时根据实际情况修改 base */
@@ -31,7 +31,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       cors: true,
       proxy: {
         '/dev-env': {
-          target: VITE_HOST_URL + VITE_API_URL,
+          target: VITE_API_URL,
           changeOrigin: true,
           secure: true,
           rewrite: path => {

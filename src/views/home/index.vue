@@ -12,7 +12,7 @@ definePage({
 
 const route = useRoute('HomePage')
 
-console.log('%c Line:16 🥐', 'color:#f5ce50', route.meta)
+console.log(route.meta)
 </script>
 
 <template>
