@@ -16,12 +16,12 @@ import TurboConsole from 'unplugin-turbo-console/vite'
 import UnpluginUnused from 'unplugin-unused/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import VueMacros from 'unplugin-vue-macros'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import VueDevtools from 'vite-plugin-vue-devtools'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import VueMacros from 'vue-macros'
 
 export const src = fileURLToPath(new URL('../src', import.meta.url))
 export const types = fileURLToPath(new URL('../types', import.meta.url))
