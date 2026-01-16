@@ -1,3 +1,5 @@
+import { computed } from 'vue'
+
 interface AssetsImageUrlOptions {
   extension: '.jpg' | '.png' | '.svg'
 }

@@ -5,5 +5,6 @@
   "stylelint.validate": ["css", "scss", "less", "vue", "html"],
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.autoImportFileExcludePatterns": ["vue-router$"],
-  "eslint.useFlatConfig": true
+  "eslint.useFlatConfig": true,
+  "CodeFree.index": true
 }
