@@ -10,6 +10,7 @@
     "vitest.config.*",
     "cypress.config.*",
     "playwright.config.*",
-    "types/**/*.d.ts"
+    "types/**/*.d.ts",
+    "package.json"
   ]
 }

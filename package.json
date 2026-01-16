@@ -82,7 +82,7 @@
     "unplugin-vue-components": "^31.0.0",
     "unplugin-vue-inspector": "^2.3.2",
     "unplugin-vue-router": "^0.19.2",
-    "vite": "^7.3.1",
+    "vite": "8.0.0-beta.8",
     "vite-plugin-vue-devtools": "^8.0.5",
     "vite-plugin-vue-meta-layouts": "^0.6.1",
     "vite-tsconfig-paths": "^6.0.4",
@@ -105,6 +105,9 @@
   "pnpm": {
     "patchedDependencies": {
       "nprogress-v2": "patches/nprogress-v2.patch"
+    },
+    "overrides": {
+      "vite": "8.0.0-beta.7"
     }
   }
 }

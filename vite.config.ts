@@ -41,11 +41,11 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       },
     },
 
-    esbuild: {
-      /** 在打包代码时移除 console.log、debugger 和 注释 */
-      drop: viteEnv.VITE_DROP_CONSOLE ? ['console', 'debugger'] : [],
-      legalComments: viteEnv.VITE_LEGAL_COMMENTS ? 'none' : 'inline',
-    },
+    // esbuild: {
+    //   /** 在打包代码时移除 console.log、debugger 和 注释 */
+    //   drop: viteEnv.VITE_DROP_CONSOLE ? ['console', 'debugger'] : [],
+    //   legalComments: viteEnv.VITE_LEGAL_COMMENTS ? 'none' : 'inline',
+    // },
     build: {
       outDir: `dist-${process.env.npm_package_version}`,
       /** 消除打包大小超过 500kb 警告 */
