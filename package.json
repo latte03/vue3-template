@@ -24,7 +24,7 @@
     "@vueuse/core": "^14.1.0",
     "@vueuse/head": "^2.0.0",
     "alova": "^3.4.1",
-    "axios": "^1.13.2",
+    "axios": "^1.15.0",
     "bumpp": "^10.4.0",
     "fast-querystring": "^1.1.2",
     "lodash-es": "^4.17.22",
