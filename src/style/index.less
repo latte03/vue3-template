@@ -77,10 +77,10 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-background);
+  text-rendering: optimizelegibility;
   transition:
     color 0.5s,
     background-color 0.5s;
-  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -94,4 +94,22 @@ body {
 
 a {
   color: var(--a-color);
+}
+
+/* nprogress-v2 的 dist 样式把颜色写死为 #29d，这里用 --nprogress-color 覆盖 */
+.nprogress {
+  .bar {
+    background: var(--nprogress-color);
+  }
+
+  .peg {
+    box-shadow:
+      0 0 10px var(--nprogress-color),
+      0 0 5px var(--nprogress-color);
+  }
+
+  .spinner-icon {
+    border-top-color: var(--nprogress-color);
+    border-left-color: var(--nprogress-color);
+  }
 }

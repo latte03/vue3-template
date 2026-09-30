@@ -1,9 +1,22 @@
 import { sxzz } from '@sxzz/eslint-config'
 
 export default sxzz(
+  {
+    prettier: true,
+    vue: true,
+  },
   [
     {
-      plugins: {},
+      // 插件生成的类型声明，文件头自带 eslint-disable
+      ignores: [
+        'types/auto-imports.d.ts',
+        'types/components.d.ts',
+        'types/svg-component.d.ts',
+        'types/svg-component-global.d.ts',
+        'types/typed-router.d.ts',
+      ],
+    },
+    {
       rules: {
         'no-restricted-syntax': [
           'error',
@@ -18,6 +31,13 @@ export default sxzz(
         'prettier/prettier': 'error',
         'import/order': 'off',
         'sort-imports': 'off',
+        // axios/alova 实例在模块作用域注册拦截器属于预期写法
+        'unicorn/no-top-level-side-effects': 'off',
+      },
+    },
+    {
+      files: ['**/*.vue'],
+      rules: {
         'vue/attributes-order': 'error',
         'vue/block-order': ['error', { order: ['script', 'template', 'style'] }],
         'vue/component-api-style': ['error', ['script-setup', 'composition']],
@@ -46,10 +66,5 @@ export default sxzz(
         'vue/require-explicit-emits': 'off',
       },
     },
-  ],
-  {
-    prettier: true,
-    sortKeys: true,
-    vue: true,
-  }
+  ]
 )

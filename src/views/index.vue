@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useAssetsImageURL } from '@composables/url-composable'
-
 import { sha } from '~build/git'
 import { getRoutes } from '@/router'
 

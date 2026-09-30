@@ -1,10 +1,10 @@
 import presetRemToPx from '@unocss/preset-rem-to-px'
 import transformerDirectives from '@unocss/transformer-directives'
-import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetWind3 } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetWind3(),
     presetRemToPx(),
     presetAttributify(),
     presetIcons({ scale: 1.2, warn: true }),

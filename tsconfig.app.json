@@ -5,12 +5,12 @@
     "target": "ESNext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
+    "rootDir": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": {
-      "@/*": ["src/*"],
-      "@composables/*": ["src/composables/*"]
+      "@/*": ["./src/*"],
+      "@composables/*": ["./src/composables/*"]
     },
     "resolveJsonModule": true,
     "types": [],
@@ -19,7 +19,6 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
-    "ignoreDeprecations": "5.0",
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
@@ -34,7 +33,6 @@
   ],
   "exclude": ["src/**/__tests__/*", "tests/**/*.test.ts"],
   "vueCompilerOptions": {
-    "plugins": []
-    // ...
+    "plugins": ["vue-router/volar/sfc-typed-router"]
   }
 }

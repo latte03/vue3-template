@@ -9,9 +9,6 @@ export function judge(
   interval: Array<[number, number]>
 ): [number, number] | undefined {
   return interval.find(item => {
-    if (value > item[0] && value <= item[1]) {
-      return true
-    }
-    return false
+    return value > item[0] && value <= item[1]
   })
 }

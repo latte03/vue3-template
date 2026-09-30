@@ -10,7 +10,6 @@ import '~console/theme-detect'
 import 'nprogress-v2/dist/index.css'
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
-
 import './style/index.less'
 
 const app = createApp(App)

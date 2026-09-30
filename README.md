@@ -5,9 +5,14 @@
 - 🚀 Pinia,Unocss,Typescript
 - 🦾 Eslint,Stylelint,commitizen
 - ⚡️ vitest
-- 💚 Supports pnpm-patch
-- ✨ [unplugin-vue-router](https://github.com/posva/unplugin-vue-router):Automatic file based Routing in Vue with TS support
-- ✨ [unplugin-vue-macros](https://github.com/sxzz/unplugin-vue-macros): Explore and extend more macros and syntax sugar to Vue.
+- ✨ [vue-router file based routing](https://router.vuejs.org/guide/features/extras/file-based-routing):Automatic file based Routing in Vue with TS support (vue-router 5 内置，无需 unplugin-vue-router)
+- ✨ [vue-macros](https://github.com/sxzz/vue-macros): Explore and extend more macros and syntax sugar to Vue.
+
+## 环境
+
+- Node >= 24（见 `.nvmrc` / `.tool-versions`），pnpm 12
+- pnpm 的配置放在 `pnpm-workspace.yaml`（pnpm 12 起不再读取 `package.json` 的 `pnpm` 字段）
+- `typescript` 别名为 `@typescript/typescript6`：TypeScript 7 原生编译器暂不被 vue-tsc / typescript-eslint 支持，需等 TS 7.1 的稳定 API。类型检查用 `pnpm type-check`（vue-tsc），原生 TS6 的 CLI 是 `pnpm tsc6`
 
 ## 注意
 

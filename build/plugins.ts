@@ -1,8 +1,5 @@
-/// <reference types="vitest" />
-
 import path from 'node:path'
 import process from 'node:process'
-
 import { fileURLToPath, URL } from 'node:url'
 import { webUpdateNotice } from '@plugin-web-update-notification/vite'
 import vue from '@vitejs/plugin-vue'
@@ -16,12 +13,11 @@ import TurboConsole from 'unplugin-turbo-console/vite'
 import UnpluginUnused from 'unplugin-unused/vite'
 import { TDesignResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
 import VueDevtools from 'vite-plugin-vue-devtools'
 import MetaLayouts from 'vite-plugin-vue-meta-layouts'
-import tsconfigPaths from 'vite-tsconfig-paths'
 import VueMacros from 'vue-macros'
+import { VueRouterAutoImports } from 'vue-router/unplugin'
+import VueRouter from 'vue-router/vite'
 
 export const src = fileURLToPath(new URL('../src', import.meta.url))
 export const types = fileURLToPath(new URL('../types', import.meta.url))
@@ -74,9 +70,7 @@ export function definePlugins() {
      * @link https://utc.yuy1n.io/guide/getting-started.html
      */
 
-    TurboConsole({
-      /* options here */
-    }),
+    TurboConsole({/* options here */}),
 
     /**
      * see unocss.config.ts for config
@@ -90,8 +84,7 @@ export function definePlugins() {
        * .ts, .tsx, .js, .jsx
        */
       include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md$/],
-      imports: ['vue', VueRouterAutoImports, 'vue/macros'],
-      eslintrc: { enabled: true },
+      imports: ['vue', VueRouterAutoImports],
       resolvers: [TDesignResolver({ library: 'vue-next' })],
       dts: getTypesPath('./auto-imports.d.ts'),
     }),
@@ -155,12 +148,6 @@ export function definePlugins() {
       source: path.join('./', `dist-${process.env.npm_package_version}`),
       outDir: path.join('./'),
     }),
-
-    /**
-     * Give vite the ability to resolve imports using TypeScript's path mapping.
-     * @link https://github.com/aleclarson/vite-tsconfig-paths
-     */
-    tsconfigPaths(),
 
     /**
      * Export build information as virutal module.

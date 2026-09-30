@@ -4,7 +4,6 @@
  */
 import { createAlova } from 'alova'
 import fetchAdapter, { type FetchRequestAdapter } from 'alova/fetch'
-
 import VueHook from 'alova/vue'
 
 import { baseURL } from './constant'
